@@ -6,10 +6,12 @@
 * 数组  
 
 JSON的特点:
+```javascript
 {
 	"name": "zwl",
 	"age": 26
 }
+```  
 1.不用声明就是  
 2.没有末尾分号  
 3.使用双引号  
@@ -38,13 +40,13 @@ JSON.stringify(obj, function(key, value) {
 }) 
 //=> {"age":5000,"book":"abc,def"}
 ```
-小技巧:
+小技巧:  
 1. 过滤所有内容: `JSON.stringify(obj, [])  //=> {}`  
 2. 不过滤所有内容: `JSON.stringify(obj, '') //=> '{"name":"zwl","age":26,"book":["abc", "def"]}'`  
 
 
-第3个参数是用来做格式化输出的:
-比如输出时,每个级别缩进4个空格:
+第3个参数是用来做格式化输出的:  
+比如输出时,每个级别缩进4个空格:  
 ```javascript
 JSON.stringify(obj, null, 4)  
 obj = {
@@ -79,7 +81,7 @@ JSON.stringify(obj, null, '**1234567890')
 * `parse()` 将字符串转换成JSON  
 
 ## `toJSON()` 返回自身的JSON数据格式
-例如:返回obj中的book 
+例如:返回`obj`中的`book` 
 ```javascript 
 obj = {
 	"name": "zwl",
@@ -117,7 +119,7 @@ var iStr = JSON.stringify(i)
 
 var reI = JSON.parse(iStr, function(key, val) {
 	if (key == "time") return new Date(val)
-	else if (key == 'age') { return undefined // undefined 忽略此输出}  
+	else if (key == 'age') { return undefined // undefined 忽略此输出  }  
 	else return val
 })
 // reI => object  
