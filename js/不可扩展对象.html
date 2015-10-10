@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>不可扩展对象</title>
+</head>
+<body>
+	<p>请尝试在控制台中输入 person.age = '27'</p>
+</body>
+<script>
+	
+	var person = {'name': 'King'};
+	// 阻止对person添加新属性和方法
+	// 但原先有的值可以重新赋值
+	Object.preventExtensions(person)
+</script>
+</html>
