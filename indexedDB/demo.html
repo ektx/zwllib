@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基础使用</title>
+</head>
+<body>
+	
+</body>
+<script>
+var request, database;
+
+// 打开或创建一个数据库
+request = indexedDB.open('admin');
+request.onerror = function(event) {
+	alert('Something bad happend while trying to open: ' + event.target.errorCode);
+}
+
+request.onsuccess = function(event) {
+	database = event.target.result;
+}
+</script>
+</html>
