@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MatchesSelector</title>
+</head>
+<body>
+	<div id="test" class="css1 css2"></div>
+</body>
+<script>
+
+function matchesSelector(ele, selector) {
+	if (ele.matchesSelector) {
+		return ele.matchesSelector(selector)
+	} else if (ele.msMatchesSelector) {
+		return els.msMatchesSelector(selector)
+	} else if (ele.webkitMatchesSelector) {
+		return ele.webkitMatchesSelector(selector)
+	} else if (ele.mozMatchesSelector) {
+		return els.mozMatchesSelector(selector)
+	} else {
+		throw new Error('Not surpported.')
+	}
+}
+
+var div = document.getElementById('test')
+// var selects = div.webkitMatchesSelector('div')
+// var selectsID = div.webkitMatchesSelector('#test')
+// var selectsCss1 = div.webkitMatchesSelector('.css1')
+// var selectsCss2 = div.webkitMatchesSelector('.css2')
+// var selectsCss3 = div.webkitMatchesSelector('.css3')
+
+var selects = matchesSelector(div, 'div')
+var selectsID = matchesSelector(div, '#test')
+var selectsCss1 = matchesSelector(div, '.css1')
+var selectsCss2 = matchesSelector(div, '.css2')
+var selectsCss3 = matchesSelector(div, '.css3')
+
+
+
+console.log(selects)
+console.log(selectsID)
+console.log(selectsCss1)
+console.log(selectsCss2)
+console.log(selectsCss3)
+
+
+// 参考
+// 《Javascript高级程序设计（3） P281 PDF299
+</script>
+</html>
