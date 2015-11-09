@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Date parse()</title>
+</head>
+<body>
+	<p>输入2015年双11的毫秒数</p>
+	<script>
+	// Date.UTC(年, 月(从0开始计), 日(1-31), 时, 分, 秒)
+	// * 以下得到的时间会多8小时，
+	// 验证方法：new Date(Date.UTC(2015, 10, 11, 0, 0, 0))
+	document.write(Date.UTC(2015, 10, 11, 0, 0, 0) + '<br />')
+	document.write(Date.parse('Nov 11 2015') + '<br />')
+	document.write(Date.parse('11/11/2015') + '<br />')
+	</script>
+</body>
+</html>

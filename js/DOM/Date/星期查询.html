@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>星期查询</title>
+</head>
+<body>
+	<input id="searchDate" type="text" placeholder="查询:2015-11-11">
+	<button id="get">查询</button>
+
+	<ul id="result"></ul>
+
+	<script>
+	var getBtn = document.getElementById('get');
+	var ul = document.getElementById('result');
+
+	var lang = {};
+	lang['zh'] = ['星期天','星期一','星期二','星期三','星期四','星期五','星期六'];
+	lang['en'] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+
+	getBtn.addEventListener('click', function(e) {
+		var sDateInt = document.getElementById('searchDate');
+		var val = sDateInt.value;
+
+		// if (val.indexOf('-') == -1) {
+			
+		// }
+
+		// 处理星期
+		var day = (new Date(Date.parse(val))).getDay();
+
+		// 处理语言
+		var lan = navigator.language;
+		if (lan.indexOf('-') > -1) {
+			lan = lan.split('-')[0]
+		}
+
+		// 输出
+		var li = document.createElement('li');
+		var liTxt = document.createTextNode(val +' - ' + lang[lan][day]);
+		li.appendChild(liTxt);
+		ul.appendChild(li)
+
+	})
+	</script>
+</body>
+</html>
