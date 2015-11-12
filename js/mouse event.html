@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mouse Event</title>
+	<style>
+	body {
+	  background-color: #f5f5f5;
+	}
+	#box {
+	  width: 200px;
+	  height: 120px;
+	  border: 2px solid #eee;
+	  background-color: #fff;
+	  margin: 0 auto;
+	  text-align: center;
+	  line-height: 60px;
+	  font-size: 2em;
+	}
+	table {
+		width: 280px;
+		border-collapse: collapse;
+	}
+	tr:nth-child(even) {
+		background-color: #ccc;
+	}
+	</style>
+</head>
+<body>
+	<div id="box">Click</div>
+	<p>button - buttons值</p>
+	<table>
+		<thead>
+			<tr>
+				<th>操作</th>
+				<th>Button</th>
+				<th>Buttons</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>右键</td>
+				<td>0</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>中键</td>
+				<td>1</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>右键</td>
+				<td>2</td>
+				<td>2</td>
+			</tr>			
+			<tr>
+				<td>左右键</td>
+				<td>2|0</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>左中键</td>
+				<td>0|1</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>右中键</td>
+				<td>1|2</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>左中右键</td>
+				<td>0|1|2</td>
+				<td>7</td>
+			</tr>
+		</tbody>
+	</table>
+	<script>
+	var box = document.getElementById('box');
+	document.oncontextmenu = function() {
+		return false
+	}
+	box.addEventListener('mousedown', function(e) {
+		box.innerHTML = 'button: '+e.button+'<br/>buttons:'+e.buttons;
+	  
+	}, false)
+	</script>
+</body>
+</html>
