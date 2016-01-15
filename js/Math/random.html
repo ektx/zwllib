@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Math.random</title>
+	<style>
+	svg {
+		fill: transparent;
+		stroke: #f00;
+	}
+	</style>
+</head>
+<body>
+	<svg id="one" xmlns="http://www.w3.org/2000/svg">
+		<path d="" />
+	</svg>
+
+	<svg id="two" xmlns="http://www.w3.org/2000/svg">
+		<path d="" />
+	</svg>
+</body>
+<script>
+var d = 'M0 0';
+for (var i = 0; i < 10000; i++) {
+	d += ' L'+ (i*200/10000) + ' ' + Math.random()*100;
+}
+// console.log(d)
+// d += ' Z'
+document.querySelector('#one path').setAttribute('d', d)
+
+// two
+for (var i = 0; i < 10000; i++) {
+	d += ' L'+ (i*200/1000) + ' ' + Math.random()*Math.random()*Math.random()*100;
+}
+document.querySelector('#two path').setAttribute('d', d)
+
+</script>
+</html>
