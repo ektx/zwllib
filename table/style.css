@@ -1,0 +1,97 @@
+@charset 'utf-8';
+
+main {
+	width: 500px;
+	margin-bottom: 36px;
+}
+
+
+/* 
+	表格模块
+	---------------------------------
+	zwl
+	2016-10-13
+*/
+/* 表格主体 */
+.table-mod,
+.table-header,
+.table-contents,
+.table-mod table {
+	width: 100%;
+	font-size: 14px;
+}
+.table-mod {
+	border: 1px solid #e1e6eb;
+	box-sizing: border-box;
+}
+.table-mod table {
+	border-collapse: collapse;
+}
+.table-mod th,
+.table-mod td {
+	padding: 5px;
+}
+.table-mod td:first-child {
+	border-left-color: transparent;
+}
+.table-header {
+	overflow: hidden;
+	border-bottom: none;
+}
+.table-contents {
+	overflow: auto;
+}
+
+
+/*
+	表格细节优化
+	-------------------------------
+*/
+/* 
+	主题1 - 灰色效果
+	-------------------------------
+	效果请查看页面，
+	实现的是 2 行合并，且隔行换色的功能
+
+*/
+.theam01-table td {
+	border: 1px solid #e1e6eb;
+}
+
+/* 2行合并且隔行换色 */
+.table-header th,
+.theam01-table tr:nth-child(4n+4),
+.theam01-table tr:nth-child(4n+3) {
+	background-color: #f5f6fa;
+}
+
+/* 
+	表格控制
+	-------------------------------------
+	对表格的自定义控制，如大小，列宽，字大小==
+*/
+.my-table01 td:first-child,
+.my-table01 td:nth-child(2),
+.my-table01 td:nth-child(3) {
+	text-align: center;
+}
+.my-table01 td:first-child,
+.my-table01 th:first-child,
+.my-table01 th:nth-child(2),
+.my-table01 td:nth-child(2) {
+	width: 15px;
+}
+.my-table01 td:nth-child(3),
+.my-table01 th:nth-child(3) {
+	width: 40px;
+}
+.my-table01 td:nth-child(4),
+.my-table01 th:nth-child(4),
+.my-table01 td:nth-child(5),
+.my-table01 th:nth-child(5) {
+	width: 140px;
+}
+
+.my-table02 table {
+	width: 800px;
+}
