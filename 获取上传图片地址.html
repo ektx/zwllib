@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取上传图片地址</title>
+</head>
+<body>
+	<input id="select" type="file" file="[]" multiple>
+
+	<script>
+		var imgArr = [];
+		document.getElementById('select').addEventListener('change', function(e) {
+			console.log(e.target)
+			console.log(this.files)
+
+			for (var i = 0, l = this.files.length; i < l; i++) {
+				var img = document.createElement('img');
+				img.src = URL.createObjectURL( this.files[i] );
+				document.body.appendChild( img );
+			}
+		})
+
+	</script>
+</body>
+</html>
